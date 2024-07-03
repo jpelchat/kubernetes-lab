@@ -1,0 +1,22 @@
+{
+  "title": "Grafana Lab",
+  "description": "Use a simple one node Kubernetes cluster and let user list all pods",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground": "foreground.sh"
+    },
+    "steps": [
+      {
+        "title": "List all pods",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu-4GB"
+  }
+}
