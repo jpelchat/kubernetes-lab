@@ -1,6 +1,6 @@
 {
-  "title": "Grafana Lab",
-  "description": "Use a simple one node Kubernetes cluster and let user list all pods",
+  "title": "Grafana Alloy and Dashboards",
+  "description": "Install Alloy and generate dashboards in Grafana Cloud.",
   "details": {
     "intro": {
       "text": "intro.md",
@@ -9,7 +9,7 @@
     },
     "steps": [
       {
-        "title": "List all pods",
+        "title": "Install Alloy",
         "text": "step1.md"
       }
     ],
