@@ -68,8 +68,7 @@ Alloy is now configured to send host metrics to the hosted instance of Prometheu
 
 Let's confirm the dashboard is working as intended and have the memory spike on our system.
 
-From the Ubuntu host, run the following command to generate a process that consumes exactly 2GB of memory:
-
+1. From the Ubuntu host, run the following command to generate a process that consumes exactly 2GB of memory:
     ```
     head -c 2G /dev/zero | tail
     ```{{exec}}
