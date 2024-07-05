@@ -10,8 +10,6 @@ Grafana Alloy is a distribution of the OpenTelemetry (OTel) Collector that allow
 4. Click **Create token**.
 5. Run the code block under "Install and run Grafana Alloy" on the Ubuntu host.
 
-<br>
-
 Great! Alloy should now be installed. 🎉
 
 # Configure Alloy
@@ -20,9 +18,8 @@ Right now, Alloy is not collecting any useful data from your host. We can change
 
 > Prometheus Node Exporter exposes a wide variety of hardware- and kernel-related metrics. Plugin specifics are outside the scope of this lab. Feel free to read more about "Node Exporter" [here](https://prometheus.io/docs/guides/node-exporter/).
 
-Run the following command to add the Prometheus Node Exporter plugin to Alloy's configuration.
-
-```
+1. Run the following command to add the Prometheus Node Exporter plugin to Alloy's configuration.
+  ```
   cat <<EOF >> /etc/alloy/config.alloy
   prometheus.exporter.unix "demo" { }
   
@@ -32,10 +29,8 @@ Run the following command to add the Prometheus Node Exporter plugin to Alloy's 
   }
   EOF
 ```
-
-Restart the Alloy service, and confirm it is up and running.
-
-```
+2. Restart the Alloy service, and confirm it is up and running.
+  ```
   systemctl restart alloy
   systemctl --no-pager status alloy
 ```
