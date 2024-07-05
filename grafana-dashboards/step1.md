@@ -31,14 +31,14 @@ Right now, Alloy is not collecting any useful data from your host. We can change
     forward_to = [prometheus.remote_write.metrics_service.receiver]
   }
   EOF
-  ```
+  ```{exec}
 
 2. Restart the Alloy service, and confirm it is up and running.
 
   ```
   systemctl restart alloy
   systemctl --no-pager status alloy
-  ```
+  ```{exec}
 
 Alloy is now configured to send host metrics to the hosted instance of Prometheus in Grafana Cloud. 🎉
 
@@ -55,7 +55,7 @@ Alloy is now configured to send host metrics to the hosted instance of Prometheu
 
   ```
   node_memory_MemFree_bytes / 1024 / 1024 / 1024
-  ```
+  ```{copy}
 
   > This query will display the amount of memory of a system in GBs.
 
@@ -75,7 +75,7 @@ Alloy is now configured to send host metrics to the hosted instance of Prometheu
 
   ```
   sum(rate(node_network_transmit_bytes_total[1m])) / 1024 / 1024
-  ```
+  ```{copy}
 
 # Testing the dashboard
 
@@ -85,7 +85,7 @@ Let's confirm the dashboard is working as intended and have the memory spike on 
 
   ```
   head -c 2G /dev/zero | tail
-  ```
+  ```{copy}
 
   > This command will generate a process that consumes exactly 2GB of memory.
 
