@@ -21,8 +21,7 @@ Right now, Alloy is not collecting any useful data from your host. We can change
 > Prometheus Node Exporter exposes a wide variety of hardware- and kernel-related metrics. Plugin specifics are outside the scope of this lab. Feel free to read more about "Node Exporter" [here](https://prometheus.io/docs/guides/node-exporter/).
 
 1. Run the following command to add the Prometheus Node Exporter plugin to Alloy's configuration.
-
-  ```
+    ```
   cat <<EOF >> /etc/alloy/config.alloy
   prometheus.exporter.unix "demo" { }
   
@@ -32,9 +31,7 @@ Right now, Alloy is not collecting any useful data from your host. We can change
   }
   EOF
   ```
-
 2. Restart the Alloy service, and confirm it is up and running.
-
   ```
   systemctl restart alloy
   systemctl --no-pager status alloy
