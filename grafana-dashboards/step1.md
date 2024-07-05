@@ -47,35 +47,22 @@ Alloy is now configured to send host metrics to the hosted instance of Prometheu
 1. From the right-hand menu, click **Dashboards**. Then, in the upper-left, click by **New ▶ New dashboard**.
 2. Next, click **Add visualization**.
 3. From the dropdown menu, select the first (and default) Grafana Cloud Prometheus data source. This will open the **Edit panel** screen.
-
   ![Prometheus Data Source](https://i.imgur.com/w8ameGB.png)
-
 4. In the upper-left, input a Title/Description as metadata for the panel, and change the visualization to be a "Gauge". 
-5. Input the following as the query:
-
+5. Input the following as the query, which will display the amount of memory of a system in GBs:
   ```
   node_memory_MemFree_bytes / 1024 / 1024 / 1024
   ```
-
-  > This query will display the amount of memory of a system in GBs.
-
-
   ![Query](https://i.imgur.com/gp1wgiS.png)
-
-5. Test the query by clicking **Run quries**. The gauge will populate with some data!
-6. Next, let's clean up the gauge. On the left-hand side, scroll down to _Standard options_. Change the **Unit** into **Data > Gigabytes** and set the min and max values to `0` and `4`. 
-7. Help future SRE's by changing adding some color to your gauge. Change the **Thresholds** settings to the following configuration:
-
+6. Test the query by clicking **Run quries**. The gauge will populate with some data!
+7. Next, let's clean up the gauge. On the left-hand side, scroll down to _Standard options_. Change the **Unit** into **Data > Gigabytes** and set the min and max values to `0` and `4`. 
+8. Help future SRE's by changing adding some color to your gauge. Change the **Thresholds** settings to the following configuration, so that low memory is represented in red:
   ![Memory](https://i.imgur.com/nQFcBer.png)
-  > If memory is critically low, this configuration will display the number in red.
-
-8. Click **Save** to return to the dashboard.
-
+9. Click **Save** to return to the dashboard.
 > **Extra challenge**: Try and build another panel with the following query:
-
-  ```
-  sum(rate(node_network_transmit_bytes_total[1m])) / 1024 / 1024
-  ```
+>  ```
+>  sum(rate(node_network_transmit_bytes_total[1m])) / 1024 / 1024
+>  ```
 
 # Testing the dashboard
 
