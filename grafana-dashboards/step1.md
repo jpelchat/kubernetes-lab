@@ -64,7 +64,12 @@ Alloy is now configured to send host metrics to the hosted instance of Prometheu
 
 5. Test the query by clicking **Run quries**. The gauge will populate with some data!
 6. Next, let's clean up the gauge. On the left-hand side, scroll down to _Standard options_. Change the **Unit** into **Data > Gigabytes** and set the min and max values to `0` and `4`. 
-7. Click **Save** to return to the dashboard.
+7. Help future SRE's by changing adding some color to your gauge. Change the **Thresholds** settings to the following configuration:
+
+  ![Memory](https://i.imgur.com/nQFcBer.png)
+  > If memory is critically low, this configuration will display the number in red.
+
+8. Click **Save** to return to the dashboard.
 
 # Testing the dashboard
 
