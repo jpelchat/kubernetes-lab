@@ -62,8 +62,9 @@ Alloy is now configured to send host metrics to the hosted instance of Prometheu
 
   ![Query](https://i.imgur.com/gp1wgiS.png)
 
-5. Test the query by clicking **Run query**. The gauge will populate with some data!
-6. Click **Save** to return to the dashboard.
+5. Test the query by clicking **Run quries**. The gauge will populate with some data!
+6. Next, let's clean up the gauge. On the left-hand side, scroll down to _Standard options_. Change the **Unit** into **Data > Gigabytes** and set the min and max values to `0` and `4`. 
+7. Click **Save** to return to the dashboard.
 
 # Testing the dashboard
 
