@@ -42,7 +42,7 @@ Right now, Alloy is not collecting any useful data from your host. We can change
 
 Alloy is now configured to send host metrics to the hosted instance of Prometheus in Grafana Cloud. 🎉
 
-# Build your dashboard
+# Start your dashboard
 
 1. From the right-hand menu, click **Dashboards**. Then, in the upper-left, click by **New ▶ New dashboard**.
 2. Next, click **Add visualization**.
@@ -70,6 +70,12 @@ Alloy is now configured to send host metrics to the hosted instance of Prometheu
   > If memory is critically low, this configuration will display the number in red.
 
 8. Click **Save** to return to the dashboard.
+
+> **Extra challenge**: Try and build another panel with the following query:
+
+  ```
+  sum(rate(node_network_transmit_bytes_total[1m])) / 1024 / 1024
+  ```
 
 # Testing the dashboard
 
