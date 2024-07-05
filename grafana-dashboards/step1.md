@@ -29,6 +29,7 @@ Right now, Alloy is not collecting any useful data from your host. We can change
   }
   EOF
   ```
+{:start="2"}
 2. Restart the Alloy service, and confirm it is up and running.
   ```
   systemctl restart alloy
