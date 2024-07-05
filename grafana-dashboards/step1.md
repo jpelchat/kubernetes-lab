@@ -21,7 +21,8 @@ Right now, Alloy is not collecting any useful data from your host. We can change
 > Prometheus Node Exporter exposes a wide variety of hardware- and kernel-related metrics. Plugin specifics are outside the scope of this lab. Feel free to read more about "Node Exporter" [here](https://prometheus.io/docs/guides/node-exporter/).
 
 1. Run the following command to add the Prometheus Node Exporter plugin to Alloy's configuration.
-  ```
+
+```
   cat <<EOF >> /etc/alloy/config.alloy
   prometheus.exporter.unix "demo" { }
   
@@ -30,12 +31,14 @@ Right now, Alloy is not collecting any useful data from your host. We can change
     forward_to = [prometheus.remote_write.metrics_service.receiver]
   }
   EOF
-  ```
+``` {{exec}}
+
 2. Restart the Alloy service, and confirm it is up and running.
-  ```
+
+```
   systemctl restart alloy
   systemctl --no-pager status alloy
-  ```
+```
 
 Alloy is now configured to send host metrics to the hosted instance of Prometheus in Grafana Cloud. 🎉
 
@@ -65,7 +68,7 @@ Alloy is now configured to send host metrics to the hosted instance of Prometheu
 
 Let's confirm the dashboard is working as intended and have the memory spike on our system.
 
-1. From the Ubuntu host, run the following command:
+From the Ubuntu host, run the following command:
 
   ```
   head -c 2G /dev/zero | tail
@@ -73,4 +76,4 @@ Let's confirm the dashboard is working as intended and have the memory spike on 
 
   > This command will generate a process that consumes exactly 2GB of memory.
 
-2. Return to your Grafana dashboard, and watch the gauge increase as Prometheus scrapes the new metrics.
+Return to your Grafana dashboard, and watch the gauge increase as Prometheus scrapes the new metrics.
