@@ -61,7 +61,7 @@ Alloy is now configured to send host metrics to the hosted instance of Prometheu
 
 > **Extra challenge**: Try and build another panel with the following query:
 >  ```
->  sum(rate(node_network_transmit_bytes_total[1m])) / 1024 / 1024
+>  rate(node_network_receive_bytes_total[10m])
 >  ```
 
 # Testing the dashboard
