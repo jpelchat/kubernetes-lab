@@ -28,12 +28,12 @@ Right now, Alloy is not collecting any useful data from your host. We can change
     forward_to = [prometheus.remote_write.metrics_service.receiver]
   }
   EOF
-```
+  ```
 2. Restart the Alloy service, and confirm it is up and running.
   ```
   systemctl restart alloy
   systemctl --no-pager status alloy
-```
+  ```
 
 Alloy is now configured to send host metrics to the hosted instance of Prometheus in Grafana Cloud. 🎉
 
