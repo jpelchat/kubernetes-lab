@@ -70,7 +70,7 @@ Let's confirm the dashboard is working as intended and have the memory spike on 
 
 1. From the Ubuntu host, run the following command to generate a process that consumes exactly 2GB of memory:
     ```
-    head -c 2G /dev/zero | tail
+    stress -m 1 --vm-bytes 2G &
     ```{{exec}}
 
 Return to your Grafana dashboard, and watch the gauge increase as Prometheus scrapes the new metrics.
